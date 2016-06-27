@@ -24,6 +24,9 @@ public class User {
 
     @JsonProperty("userPrincipalName")
     private String userPrincipalName;
+    
+    @JsonProperty("mail")
+    private String email;
 
     public String getId() {
         return id;
@@ -59,5 +62,17 @@ public class User {
 
     public String getUserPrincipalName() {
         return userPrincipalName;
+    }
+    
+    public void setUserPrincipalName(String userPrincipalName) {
+        this.userPrincipalName = userPrincipalName;
+    }
+    
+    public String getEmail() {
+        return email;
+    }
+    
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
