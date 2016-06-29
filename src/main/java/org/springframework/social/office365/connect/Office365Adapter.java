@@ -7,6 +7,7 @@ import org.springframework.social.connect.UserProfile;
 import org.springframework.social.connect.UserProfileBuilder;
 import org.springframework.social.office365.api.Office365;
 import org.springframework.social.office365.api.domain.User;
+import org.springframework.util.StringUtils;
 
 /**
  * Created by: Alireza Afrasiabian (aafrasiabian)
@@ -38,7 +39,7 @@ public class Office365Adapter implements ApiAdapter<Office365> {
                 .setFirstName(userProfile.getGivenName())
                 .setLastName(userProfile.getSurname())
                 .setName(userProfile.getDisplayName())
-                .setEmail(userProfile.getUserPrincipalName())
+                .setEmail(StringUtils.isEmpty(userProfile.getEmail()) ? userProfile.getUserPrincipalName() : userProfile.getEmail())
                 .setUsername(userProfile.getUserPrincipalName())
                 .build();
     }
