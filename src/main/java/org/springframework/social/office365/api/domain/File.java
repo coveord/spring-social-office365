@@ -7,9 +7,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * Date: 24/07/2014
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class File extends FileSystemItem {
+public class File extends FileSystemItem
+{
     /**
      * In this "preview" release there are not additional File entity properties.
      */
 }
-

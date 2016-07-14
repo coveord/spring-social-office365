@@ -1,16 +1,16 @@
 package org.springframework.social.office365.api;
 
+import java.util.List;
+
 import org.springframework.social.office365.api.domain.FileSystemItem;
 import org.springframework.social.office365.api.domain.Folder;
-
-import java.util.List;
 
 /**
  * Created by: Alireza Afrasiabian (aafrasiabian)
  * Date: 24/07/2014
  */
-public interface FolderOperations {
-
+public interface FolderOperations
+{
     Folder getFolder(String folderPath);
 
     Folder getRootFolder();
@@ -18,4 +18,5 @@ public interface FolderOperations {
     List<FileSystemItem> getFolderItems(String folderPath);
 
     List<FileSystemItem> getRootFolderItems();
+
 }

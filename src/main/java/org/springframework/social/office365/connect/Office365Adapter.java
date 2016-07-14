@@ -13,9 +13,11 @@ import org.springframework.util.StringUtils;
  * Created by: Alireza Afrasiabian (aafrasiabian)
  * Date: 24/07/2014
  */
-public class Office365Adapter implements ApiAdapter<Office365> {
+public class Office365Adapter implements ApiAdapter<Office365>
+{
     @Override
-    public boolean test(Office365 api) {
+    public boolean test(Office365 api)
+    {
         try {
             api.userOperations().getUserProfile();
             return true;
@@ -25,7 +27,9 @@ public class Office365Adapter implements ApiAdapter<Office365> {
     }
 
     @Override
-    public void setConnectionValues(Office365 api, ConnectionValues connectionValues) {
+    public void setConnectionValues(Office365 api,
+                                    ConnectionValues connectionValues)
+    {
         User userProfile = api.userOperations().getUserProfile();
 
         connectionValues.setProviderUserId(userProfile.getId());
@@ -33,19 +37,22 @@ public class Office365Adapter implements ApiAdapter<Office365> {
     }
 
     @Override
-    public UserProfile fetchUserProfile(Office365 api) {
+    public UserProfile fetchUserProfile(Office365 api)
+    {
         User userProfile = api.userOperations().getUserProfile();
-        return new UserProfileBuilder()
-                .setFirstName(userProfile.getGivenName())
-                .setLastName(userProfile.getSurname())
-                .setName(userProfile.getDisplayName())
-                .setEmail(StringUtils.isEmpty(userProfile.getEmail()) ? userProfile.getUserPrincipalName() : userProfile.getEmail())
-                .setUsername(userProfile.getUserPrincipalName())
-                .build();
+        return new UserProfileBuilder().setFirstName(userProfile.getGivenName())
+                                       .setLastName(userProfile.getSurname())
+                                       .setName(userProfile.getDisplayName())
+                                       .setEmail(StringUtils.isEmpty(userProfile.getEmail()) ? userProfile.getUserPrincipalName()
+                                                                                            : userProfile.getEmail())
+                                       .setUsername(userProfile.getUserPrincipalName())
+                                       .build();
     }
 
     @Override
-    public void updateStatus(Office365 api, String message) {
+    public void updateStatus(Office365 api,
+                             String message)
+    {
         // Do nothing.
     }
 }
