@@ -1,5 +1,7 @@
 package org.springframework.social.office365.api.domain;
 
+import java.util.Set;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -8,8 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Date: 24/07/2014
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class User {
-
+public class User
+{
     @JsonProperty("objectId")
     private String id;
 
@@ -24,55 +26,80 @@ public class User {
 
     @JsonProperty("userPrincipalName")
     private String userPrincipalName;
-    
+
     @JsonProperty("mail")
     private String email;
 
-    public String getId() {
+    @JsonProperty("proxyAddresses")
+    private Set<String> aliases;
+
+    public String getId()
+    {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(String id)
+    {
         this.id = id;
     }
 
-    public String getGivenName() {
+    public String getGivenName()
+    {
         return givenName;
     }
 
-    public void setGivenName(String givenName) {
+    public void setGivenName(String givenName)
+    {
         this.givenName = givenName;
     }
 
-    public String getSurname() {
+    public String getSurname()
+    {
         return surname;
     }
 
-    public void setSurname(String surname) {
+    public void setSurname(String surname)
+    {
         this.surname = surname;
     }
 
-    public String getDisplayName() {
+    public String getDisplayName()
+    {
         return displayName;
     }
 
-    public void setDisplayName(String displayName) {
+    public void setDisplayName(String displayName)
+    {
         this.displayName = displayName;
     }
 
-    public String getUserPrincipalName() {
+    public String getUserPrincipalName()
+    {
         return userPrincipalName;
     }
-    
-    public void setUserPrincipalName(String userPrincipalName) {
+
+    public void setUserPrincipalName(String userPrincipalName)
+    {
         this.userPrincipalName = userPrincipalName;
     }
-    
-    public String getEmail() {
+
+    public String getEmail()
+    {
         return email;
     }
-    
-    public void setEmail(String email) {
+
+    public void setEmail(String email)
+    {
         this.email = email;
+    }
+
+    public Set<String> getAliases()
+    {
+        return aliases;
+    }
+
+    public void setAliases(Set<String> aliases)
+    {
+        this.aliases = aliases;
     }
 }
