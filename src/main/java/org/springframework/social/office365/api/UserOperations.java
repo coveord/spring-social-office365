@@ -9,4 +9,6 @@ import org.springframework.social.office365.api.domain.User;
 public interface UserOperations
 {
     User getUserProfile();
+
+    byte[] getUserThumbnailPhoto(String userId);
 }

@@ -13,9 +13,7 @@ import org.springframework.web.client.RestTemplate;
 public class UserTemplate extends AbstractTemplate implements UserOperations
 {
     private final RestTemplate restTemplate;
-
     private boolean isAuthorized;
-
     private String url;
 
     public UserTemplate(RestTemplate restTemplate,
@@ -24,7 +22,6 @@ public class UserTemplate extends AbstractTemplate implements UserOperations
     {
         this.restTemplate = restTemplate;
         this.isAuthorized = isAuthorized;
-
         this.url = baseUrl;
     }
 
@@ -36,4 +33,13 @@ public class UserTemplate extends AbstractTemplate implements UserOperations
         return restTemplate.getForObject(URI.create(url + "/me?api-version=2013-11-08"), User.class);
     }
 
+    @Override
+    public byte[] getUserThumbnailPhoto(String userId)
+    {
+        checkAuthorization(isAuthorized);
+
+        return restTemplate.getForObject(URI.create(url + "/myorganization/users/" + userId
+                                                 + "/thumbnailPhoto?api-version=2013-11-08"),
+                                         byte[].class);
+    }
 }

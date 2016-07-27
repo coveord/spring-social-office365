@@ -11,5 +11,4 @@ public interface FileOperations
     File getFile(String filePath);
 
     byte[] getFileData(String filePath);
-
 }
