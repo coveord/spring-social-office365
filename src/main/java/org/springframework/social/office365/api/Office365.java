@@ -15,5 +15,4 @@ public interface Office365 extends ApiBinding
     FileOperations fileOperations();
 
     FolderOperations folderOperations();
-
 }

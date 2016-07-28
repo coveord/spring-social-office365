@@ -33,6 +33,9 @@ public class User
     @JsonProperty("proxyAddresses")
     private Set<String> aliases;
 
+    @JsonProperty("thumbnailPhoto@odata.mediaContentType")
+    private String photoType;
+
     public String getId()
     {
         return id;
@@ -101,5 +104,15 @@ public class User
     public void setAliases(Set<String> aliases)
     {
         this.aliases = aliases;
+    }
+
+    public String getPhotoType()
+    {
+        return photoType;
+    }
+
+    public void setPhotoType(String photoType)
+    {
+        this.photoType = photoType;
     }
 }

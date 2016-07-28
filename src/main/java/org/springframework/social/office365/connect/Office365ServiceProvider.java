@@ -23,5 +23,4 @@ public class Office365ServiceProvider extends AbstractOAuth2ServiceProvider<Offi
     {
         return new Office365Template(accessToken);
     }
-
 }

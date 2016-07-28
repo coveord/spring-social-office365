@@ -75,5 +75,4 @@ public class Office365Template extends AbstractOAuth2ApiBinding implements Offic
         messageConverters.add(byteArrayMessageConverter);
         return messageConverters;
     }
-
 }

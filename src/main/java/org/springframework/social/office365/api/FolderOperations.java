@@ -18,5 +18,4 @@ public interface FolderOperations
     List<FileSystemItem> getFolderItems(String folderPath);
 
     List<FileSystemItem> getRootFolderItems();
-
 }
