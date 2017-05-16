@@ -7,13 +7,13 @@ import java.util.logging.Logger;
 import org.apache.commons.io.IOUtils;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.client.DefaultResponseErrorHandler;
-import org.springframework.web.client.ResponseErrorHandler;
 
 /**
  * Created by: Alireza Afrasiabian (aafrasiabian)
- * Date: 24/07/2014
+ * Edited by : Frederic Boutin (fredboutin)
+ * Date: 16/05/2017
  */
-public class Office365RestTemplateErrorHandler extends DefaultResponseErrorHandler implements ResponseErrorHandler
+public class Office365RestTemplateErrorHandler extends DefaultResponseErrorHandler
 {
     private static final Logger log = Logger.getLogger(Office365RestTemplateErrorHandler.class.getName());
 
@@ -23,9 +23,8 @@ public class Office365RestTemplateErrorHandler extends DefaultResponseErrorHandl
         if (super.hasError(response)) {
             log.log(Level.SEVERE, IOUtils.toString(response.getBody()));
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
     @Override
