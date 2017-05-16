@@ -54,7 +54,7 @@ public class Office365OAuth2Template extends OAuth2Template
                                          MultiValueMap<String, String> additionalParameters)
     {
         if (additionalParameters == null) {
-            additionalParameters = new LinkedMultiValueMap<String, String>();
+            additionalParameters = new LinkedMultiValueMap<>();
         }
 
         if (!additionalParameters.containsKey(RESOURCE_KEY)) {
@@ -68,7 +68,7 @@ public class Office365OAuth2Template extends OAuth2Template
     protected RestTemplate createRestTemplate()
     {
         RestTemplate restTemplate = new RestTemplate(clientHttpRequestFactory);
-        List<HttpMessageConverter<?>> converters = new ArrayList<HttpMessageConverter<?>>(2);
+        List<HttpMessageConverter<?>> converters = new ArrayList<>(2);
         converters.add(new FormHttpMessageConverter());
         converters.add(new FormMapHttpMessageConverter());
         converters.add(new MappingJackson2HttpMessageConverter());
