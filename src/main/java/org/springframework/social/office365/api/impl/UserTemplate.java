@@ -16,9 +16,7 @@ public class UserTemplate extends AbstractTemplate implements UserOperations
     private boolean isAuthorized;
     private String url;
 
-    public UserTemplate(RestTemplate restTemplate,
-                        boolean isAuthorized,
-                        String baseUrl)
+    public UserTemplate(RestTemplate restTemplate, boolean isAuthorized, String baseUrl)
     {
         this.restTemplate = restTemplate;
         this.isAuthorized = isAuthorized;
@@ -39,7 +37,6 @@ public class UserTemplate extends AbstractTemplate implements UserOperations
         checkAuthorization(isAuthorized);
 
         return restTemplate.getForObject(URI.create(url + "/myorganization/users/" + userId
-                                                 + "/thumbnailPhoto?api-version=2013-11-08"),
-                                         byte[].class);
+                + "/thumbnailPhoto?api-version=2013-11-08"), byte[].class);
     }
 }

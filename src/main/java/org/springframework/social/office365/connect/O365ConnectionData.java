@@ -34,8 +34,7 @@ public class O365ConnectionData extends ConnectionData
         this.photo = photo;
     }
 
-    public O365ConnectionData(ConnectionData connectionData,
-                              byte[] photo)
+    public O365ConnectionData(ConnectionData connectionData, byte[] photo)
     {
         super(connectionData.getProviderId(),
               connectionData.getProviderUserId(),

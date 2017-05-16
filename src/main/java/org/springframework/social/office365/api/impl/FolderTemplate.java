@@ -20,9 +20,7 @@ public class FolderTemplate extends AbstractTemplate implements FolderOperations
 
     private String url;
 
-    public FolderTemplate(RestTemplate restTemplate,
-                          boolean authorized,
-                          String baseUrl)
+    public FolderTemplate(RestTemplate restTemplate, boolean authorized, String baseUrl)
     {
         this.restTemplate = restTemplate;
         this.isAuthorized = authorized;

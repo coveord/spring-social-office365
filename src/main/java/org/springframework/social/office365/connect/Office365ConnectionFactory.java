@@ -9,8 +9,7 @@ import org.springframework.social.office365.api.Office365;
  */
 public class Office365ConnectionFactory extends OAuth2ConnectionFactory<Office365>
 {
-    public Office365ConnectionFactory(String clientId,
-                                      String clientSecret)
+    public Office365ConnectionFactory(String clientId, String clientSecret)
     {
         super(Office365.PROVIDER_NAME, new Office365ServiceProvider(clientId, clientSecret), new Office365Adapter());
     }

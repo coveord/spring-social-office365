@@ -27,8 +27,7 @@ public class Office365Adapter implements ApiAdapter<Office365>
     }
 
     @Override
-    public void setConnectionValues(Office365 api,
-                                    ConnectionValues connectionValues)
+    public void setConnectionValues(Office365 api, ConnectionValues connectionValues)
     {
         User userProfile = api.userOperations().getUserProfile();
 
@@ -44,14 +43,13 @@ public class Office365Adapter implements ApiAdapter<Office365>
                                        .setLastName(userProfile.getSurname())
                                        .setName(userProfile.getDisplayName())
                                        .setEmail(StringUtils.isEmpty(userProfile.getEmail()) ? userProfile.getUserPrincipalName()
-                                                                                            : userProfile.getEmail())
+                                                                                             : userProfile.getEmail())
                                        .setUsername(userProfile.getUserPrincipalName())
                                        .build();
     }
 
     @Override
-    public void updateStatus(Office365 api,
-                             String message)
+    public void updateStatus(Office365 api, String message)
     {
         // Do nothing.
     }

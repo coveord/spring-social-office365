@@ -11,8 +11,7 @@ import org.springframework.social.office365.api.impl.Office365Template;
  */
 public class Office365ServiceProvider extends AbstractOAuth2ServiceProvider<Office365>
 {
-    public Office365ServiceProvider(String clientId,
-                                    String clientSecret)
+    public Office365ServiceProvider(String clientId, String clientSecret)
     {
         super(new Office365OAuth2Template(clientId, clientSecret));
         ((OAuth2Template) getOAuthOperations()).setUseParametersForClientAuthentication(true);
