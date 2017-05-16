@@ -17,15 +17,12 @@ public class Office365OAuth2Template extends OAuth2Template
     public static final String RESOURCE_TO_ACCESS_URI = "https://graph.windows.net";
     public static final String RESOURCE_KEY = "resource";
 
-    public Office365OAuth2Template(String clientId,
-                                   String clientSecret)
+    public Office365OAuth2Template(String clientId, String clientSecret)
     {
         super(clientId, clientSecret, AUTHORIZE_URI, ACCESS_TOKEN_URI);
     }
 
-    public Office365OAuth2Template(String clientId,
-                                   String clientSecret,
-                                   String authenticateUrl)
+    public Office365OAuth2Template(String clientId, String clientSecret, String authenticateUrl)
     {
         super(clientId, clientSecret, AUTHORIZE_URI, authenticateUrl, ACCESS_TOKEN_URI);
     }

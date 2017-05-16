@@ -18,9 +18,7 @@ public class FileTemplate extends AbstractTemplate implements FileOperations
 
     private String url;
 
-    public FileTemplate(RestTemplate restTemplate,
-                        boolean authorized,
-                        String baseUrl)
+    public FileTemplate(RestTemplate restTemplate, boolean authorized, String baseUrl)
     {
         this.restTemplate = restTemplate;
         this.isAuthorized = authorized;
