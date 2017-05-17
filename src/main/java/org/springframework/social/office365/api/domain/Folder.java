@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Folder extends FileSystemItem
 {
     @JsonProperty("Children")
-    List<FileSystemItem> children = new ArrayList<FileSystemItem>();
+    List<FileSystemItem> children = new ArrayList<>();
 
     @JsonProperty("ChildrenCount")
     private Long childrenCount;
