@@ -65,7 +65,7 @@ public class Office365Template extends AbstractOAuth2ApiBinding implements Offic
     @Override
     protected List<HttpMessageConverter<?>> getMessageConverters()
     {
-        List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
+        List<HttpMessageConverter<?>> messageConverters = new ArrayList<>();
         messageConverters.add(new StringHttpMessageConverter());
         messageConverters.add(getFormMessageConverter());
         messageConverters.add(new MappingJackson2HttpMessageConverter());
