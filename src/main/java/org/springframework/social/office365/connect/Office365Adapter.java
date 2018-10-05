@@ -39,9 +39,9 @@ public class Office365Adapter implements ApiAdapter<Office365>
     public UserProfile fetchUserProfile(Office365 api)
     {
         User userProfile = api.userOperations().getUserProfile();
-        return new UserProfileBuilder().setFirstName(userProfile.getGivenName())
+        return new UserProfileBuilder().setName(userProfile.getDisplayName())
+                                       .setFirstName(userProfile.getGivenName())
                                        .setLastName(userProfile.getSurname())
-                                       .setName(userProfile.getDisplayName())
                                        .setEmail(StringUtils.isEmpty(userProfile.getEmail()) ? userProfile.getUserPrincipalName()
                                                                                              : userProfile.getEmail())
                                        .setUsername(userProfile.getUserPrincipalName())
