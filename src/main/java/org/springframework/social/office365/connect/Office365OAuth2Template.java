@@ -21,8 +21,8 @@ import org.springframework.web.client.RestTemplate;
  */
 public class Office365OAuth2Template extends OAuth2Template
 {
-    public static final String AUTHORIZE_URI = "https://login.microsoftonline.net/common/oauth2/authorize";
-    public static final String ACCESS_TOKEN_URI = "https://login.microsoftonline.net/common/oauth2/token";
+    public static final String AUTHORIZE_URI = "https://login.microsoftonline.com/common/oauth2/authorize";
+    public static final String ACCESS_TOKEN_URI = "https://login.microsoftonline.com/common/oauth2/token";
 
     public static final String RESOURCE_TO_ACCESS_URI = "https://graph.windows.net";
     public static final String RESOURCE_KEY = "resource";
